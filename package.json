@@ -1,0 +1,14 @@
+{
+  "name": "activity-emitter",
+  "version": "0.0.1",
+  "description": "watches a mongodb oplog and publishes them to a rabbitmq queue",
+  "main": "watch-oplog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "brianpmarks@gmail.com",
+  "dependencies": {
+    "amqp": "^0.2.4",
+    "mongo-oplog": "^0.1.7"
+  }
+}

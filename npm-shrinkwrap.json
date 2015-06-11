@@ -1,0 +1,52 @@
+{
+  "name": "activity-emitter",
+  "version": "0.0.1",
+  "dependencies": {
+    "amqp": {
+      "version": "0.2.4",
+      "from": "amqp@",
+      "resolved": "https://registry.npmjs.org/amqp/-/amqp-0.2.4.tgz",
+      "dependencies": {
+        "lodash": {
+          "version": "1.3.1",
+          "from": "lodash@~1.3.1",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-1.3.1.tgz"
+        }
+      }
+    },
+    "mongo-oplog": {
+      "version": "0.1.7",
+      "from": "mongo-oplog@",
+      "resolved": "https://registry.npmjs.org/mongo-oplog/-/mongo-oplog-0.1.7.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "0.7.4",
+          "from": "debug@0.7.x",
+          "resolved": "https://registry.npmjs.org/debug/-/debug-0.7.4.tgz"
+        },
+        "mongodb": {
+          "version": "1.3.23",
+          "from": "mongodb@~1.3.x",
+          "resolved": "https://registry.npmjs.org/mongodb/-/mongodb-1.3.23.tgz",
+          "dependencies": {
+            "bson": {
+              "version": "0.2.5",
+              "from": "bson@0.2.5",
+              "resolved": "https://registry.npmjs.org/bson/-/bson-0.2.5.tgz"
+            },
+            "kerberos": {
+              "version": "0.0.3",
+              "from": "kerberos@0.0.3",
+              "resolved": "https://registry.npmjs.org/kerberos/-/kerberos-0.0.3.tgz"
+            }
+          }
+        },
+        "wildcard": {
+          "version": "1.1.2",
+          "from": "wildcard@^1.1.1",
+          "resolved": "https://registry.npmjs.org/wildcard/-/wildcard-1.1.2.tgz"
+        }
+      }
+    }
+  }
+}
