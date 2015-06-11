@@ -19,24 +19,20 @@ connection.on('ready', function() {
   queueConnectionReady = true;
 });
 
-oplog.on('insert', function (doc) {
-  connection.publish(config.rabbitmq.exchange, JSON.stringify(doc), {}, function(err, result) {
-    err && console.log('err:', err);
+function watch(event) {
+  oplog.on(event, function (doc) {
+    if (queueConnectionReady) {
+      connection.publish(config.rabbitmq.exchange, JSON.stringify(doc), {}, function(err, result) {
+        err && console.log(event + ' err:', err);
+      });
+    }
   });
-});
- 
-oplog.on('update', function (doc) {
-  connection.publish(config.rabbitmq.exchange, JSON.stringify(doc), {}, function(err, result) {
-    err && console.log('err:', err);
-  });
-});
- 
-oplog.on('delete', function (doc) {
-  connection.publish(config.rabbitmq.exchange, JSON.stringify(doc), {}, function(err, result) {
-    err && console.log('err:', err);
-  });
-});
- 
+}
+
+watch('insert');
+watch('update');
+watch('delete');
+
 oplog.on('error', function (error) {
   console.log('error:', error);
 });
